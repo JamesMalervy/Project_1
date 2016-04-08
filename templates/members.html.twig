@@ -1,0 +1,48 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    About page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block membersNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    About us – we’re great
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>StudentID</th>
+            <th>SupervisorID</th>
+            <th>ProjectID</th>
+            <th>Status</th>
+            <th>Name</th>
+        </tr>
+
+
+
+
+        {% for members in members %}
+
+            <tr>
+                <td>{{ members.id }}</td>
+                <td>{{ members.title }}</td>
+                <td>{{ members.studentId }}</td>
+                <td>{{ members.supervisorId }}</td>
+                <td>{{ members.projectId }}</td>
+                <td>{{ members.status }}</td>
+                <td><a href="/detail/{{ members.id }}">{{ members.name }}</a></td>
+            </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+{% endblock %}

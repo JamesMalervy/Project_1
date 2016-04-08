@@ -1,0 +1,49 @@
+
+
+
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - days of week
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block publicationsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>AuthorId</th>
+            <th>URL</th>
+        </tr>
+
+
+
+
+        {% for publications in publications %}
+
+        <tr>
+            <td>{{ publications.id }}</td>
+            <td>{{ publications.title }}</td>
+            <td>{{ publications.authorId }}</td>
+            <td>{{ publications.url }}</td>
+        </tr>
+
+
+     {% endfor %}
+
+
+
+    </table>
+
+{% endblock %}
+
+
+
+

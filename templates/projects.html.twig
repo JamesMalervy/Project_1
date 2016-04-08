@@ -1,0 +1,44 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - individual Projects
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Supervisor</th>
+            <th>Group</th>
+            <th>Status</th>
+            <th>Title</th>
+        </tr>
+
+
+
+
+        {% for projects in projects %}
+
+            <tr>
+                <td>{{ projects.id }}</td>
+                <td>{{ projects.supervisor }}</td>
+                <td>{{ projects.group }}</td>
+                <td>{{ projects.status }}</td>
+                <td><a href ="/projectDetail/{{ projects.id }}">{{ projects.title }}</a></td>
+            </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+
+{% endblock %}

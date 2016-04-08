@@ -1,0 +1,23 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+  page-student
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+    <h1>Student Page</h1>
+
+    <a href="/logout">logout</a>
+       <p>
+          You are logged in as {{ username }} !!!*****************
+        </p>
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGW - {% block title %}{% endblock %}</title>
+    <style>
+        @import "/css/style.css";
+        @import "/css/nav.css";
+    </style>
+</head>
+<body>
+<header>
+    <p>*******<img src="/images/image1.gif" alt="logo">******<h1>Welcome to ITB Graphics and Game Design</h1>******<img src="/images/image1.gif" alt="logo">*******</p>
+</header>
+<nav>
+    <ul>
+        <li>
+            <a href="/index" class="{% block indexNavStyle %}{% endblock %}">Home page</a>
+        </li>
+        <li>
+            <a href="/members" class="{% block aboutNavStyle %}{% endblock %}">Members</a>
+        </li>
+        <li>
+            <a href="/projects" class="{% block daysNavStyle %}{% endblock %}">Projects</a>
+        </li>
+        <li>
+            <a href="/publications" class="{% block publicationsNavStyle %}{% endblock %}">Publications</a>
+        </li>
+    </ul>
+</nav>
+
+
+{% block main %}
+{% endblock %}
+
+<footer>
+    2015 &copy; James Malervy solutions unlimited
+</footer>
+</body>
+</html>
