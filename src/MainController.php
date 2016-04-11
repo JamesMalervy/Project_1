@@ -107,10 +107,11 @@ class MainController
 
      $user = $app['session']->get('user');
 
-
+     $members = Member::getAll();
 
 
         $argsArray = array(
+            'members' => $members,
             'username' => $user['username']
 
     );

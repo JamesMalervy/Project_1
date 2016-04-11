@@ -18,6 +18,40 @@
           You are logged in as {{ username }} !!!
         </p>
 
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>StudentID</th>
+            <th>SupervisorID</th>
+            <th>ProjectID</th>
+            <th>Status</th>
+            <th>Name</th>
+        </tr>
+
+
+
+
+        {% for member in members %}
+
+            <tr>
+                <td>{{ member.id }}</td>
+                <td>{{ member.title }}</td>
+                <td>{{ member.studentId }}</td>
+                <td>{{ member.supervisorId }}</td>
+                <td>{{ member.projectId }}</td>
+                <td>{{ member.status }}</td>
+                <td><a href="/detail/{{ member.id }}">{{ member.name }}</a></td>
+            </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+
 
 
 {% endblock %}

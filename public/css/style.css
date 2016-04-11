@@ -14,7 +14,7 @@ footer {
 
 table, th, td, tr {
     border: solid black 0.1rem;
-    background-color: white;
+    background-color: yellow;
 }
 
 td {
