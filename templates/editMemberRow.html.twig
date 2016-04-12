@@ -1,0 +1,81 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - Admin
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+
+
+    <form method="post" action="/editMemberDetails">
+
+       <p>
+           Title:
+           <br>
+           <input type="text" name="title" value="{{ memberRow.title }}">
+       </p>
+
+        <p>
+            Student Id:
+            <br>
+            <input type="text" name="studentId" value="{{ memberRow.studentId }}">
+        </p>
+
+        <p>
+            Supervisor Id:
+            <br>
+            <input type="text" name="supervisorId" value="{{ memberRow.supervisorId }}">
+        </p>
+
+        <p>
+            Password:
+            <br>
+            <input type="text" name="password" value="{{ memberRow.password }}">
+        </p>
+
+        <p>
+            Project Id:
+            <br>
+            <input type="text" name="projectId" value="{{ memberRow.projectId }}">
+        </p>
+
+        <p>
+            Status:
+            <br>
+            <input type="text" name="status" value="{{ memberRow.status }}">
+        </p>
+
+        <p>
+            Name:
+            <br>
+            <input type="text" name="name" value="{{ memberRow.name }}">
+        </p>
+
+
+        <p>
+
+
+            <input type="submit"  value="Edit">
+        </p>
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+{% endblock %}

@@ -15,7 +15,7 @@ class Member extends DatabaseTable
     private $id;
     private $title;
     private $studentId;
-    private $supervisorId;
+   // private $supervisorId;
     private $password;
     private $projectId;
     private $status;
@@ -101,21 +101,17 @@ class Member extends DatabaseTable
         $this->studentId = $studentId;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSupervisorId()
+
+   /* public function getSupervisorId()
     {
         return $this->supervisorId;
     }
 
-    /**
-     * @param mixed $supervisorId
-     */
+
     public function setSupervisorId($supervisorId)
     {
         $this->supervisorId = $supervisorId;
-    }
+    }*/
 
     /**
      * @return mixed

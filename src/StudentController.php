@@ -14,5 +14,17 @@ use Symfony\Component\HttpFoundation\Request;
 
 class StudentController
 {
+    public function studentDetailAction(Request $request, Application $app, $id)
+    {
+        $studentRow = Student::getOneById($id);
+
+        $argsArray = [
+            'students' => $studentRow,
+        ];
+
+        $template = 'studentDetail';
+        return $app['twig']->render($template . '.html.twig', $argsArray);
+    }
+
 
 }

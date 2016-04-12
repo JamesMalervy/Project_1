@@ -29,7 +29,14 @@ $app->get('/supervisor', \Itb\Utility::controller('Itb', 'main/supervisorPage'))
 $app->get('/logout', \Itb\Utility::controller('Itb', 'main/logout'));
 $app->get('/detail/{id}', \Itb\Utility::controller('Itb', 'main/detail'));
 $app->get('/projectDetail/{id}', \Itb\Utility::controller('Itb', 'project/projectDetail'));
-
+$app->get('/studentDetail/{id}', \Itb\Utility::controller('Itb', 'student/studentDetail'));
+$app->get('/editMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/editMemberTableDisplay'));
+$app->get('/editMember/{id}', \Itb\Utility::controller('Itb', 'member/editMemberDisplay'));
+$app->post('/editMemberDetails', \Itb\Utility::controller('Itb', 'member/editMemberDetails'));
+$app->get('/createMember', \Itb\Utility::controller('Itb', 'member/createMember'));
+$app->post('/newMember', \Itb\Utility::controller('Itb', 'member/newMember'));
+$app->get('/deleteMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/deleteMemberTableDisplay'));
+$app->get('/deleteMember/{id}', \Itb\Utility::controller('Itb', 'member/deleteMember'));
 
 
   /*switch ($action){
