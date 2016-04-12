@@ -125,10 +125,11 @@ class MainController
 
         $user = $app['session']->get('user');
 
-
+        $students = Student::getAll();
 
 
         $argsArray = array(
+            'students' => $students,
             'username' => $user['username']
 
         );
