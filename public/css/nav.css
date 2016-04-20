@@ -17,17 +17,17 @@ nav li {
 nav a {
     display: block;
     padding: 1rem;
-    background-color: lightgreen;
+    background-color: black;
 
     text-align: center;
-    border: 0.1rem solid black;
+    border: 0.1rem solid yellow;
 
     text-decoration: none;
-    color: blue;
+    color: white;
 }
 
 nav a:hover {
-    background-color: black;
+    background-color: lightgreen;
     color: white;
 
     text-decoration: underline;

@@ -16,6 +16,8 @@ $twig = new Twig_Environment($loader);
 // ------------
 $app = new Silex\Application();
 
+
+
 $app->register(new Silex\Provider\SessionServiceProvider());
 
 // register Twig with Silex

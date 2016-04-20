@@ -66,5 +66,90 @@ class Log extends DatabaseTable
         $this->password = $password;
     }
 
+    /**********************************************************/
+  /*  public function setPassword($password)
+    {
+        $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
+        $this->password = $hashedPassword;
+    }
 
+    public static function canFindMatchingUsernameAndPassword($username, $password)
+    {
+        $user = Login::getOneByUsername($username);
+        // var_dump($user);
+        //die();
+        // if no record has this username, return FALSE
+        if(null == $user)
+        {
+            return false;
+        }
+
+        // hashed correct password
+        $hashedStoredPassword = $user->getPassword();
+
+        return password_verify($password, $hashedStoredPassword);
+    }
+
+    public static function FindingRole($username)
+    {
+        $user = Login::getOneByUsername($username);
+
+        if(null == $user)
+        {
+            return false;
+        }
+
+        // hashed correct password
+        //$hashedStoredPassword = $user->getPassword();
+
+        return $user->getRole();
+    }
+    /**
+     * @return mixed
+     */
+  /*  public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $username
+     */
+ /*   public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+    /**
+     * if record exists with $username, return User object for that record
+     * otherwise return 'null'
+     *
+     * @param $username
+     *
+     * @return mixed|null
+     */
+ /*   public static function getOneByUsername($username)
+    {
+        $db = new DatabaseManager();
+        $connection = $db->getDbh();
+
+        $sql = 'SELECT * FROM logins WHERE username=:username';
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':username', $username, \PDO::PARAM_STR);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
+        $statement->execute();
+
+        if ($object = $statement->fetch())
+        {
+            return $object;
+        } else {
+            return null;
+        }
+    }
+  */
 }
+
+
+
+
+

@@ -19,7 +19,26 @@ class Member extends DatabaseTable
     private $password;
     private $projectId;
     private $status;
+    private $pastPresent;
     private $name;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getPastPresent()
+    {
+        return $this->pastPresent;
+    }
+
+    /**
+     * @param mixed $pastPresent
+     */
+    public function setPastPresent($pastPresent)
+    {
+        $this->pastPresent = $pastPresent;
+    }
 
     /**
      * @return mixed
