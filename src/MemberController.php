@@ -85,11 +85,12 @@ class MemberController
         $member = Member::getAll();
 
         $argsArray = [
-           'text' => 'Update was succesfull',
+            'username' => ' ',
+           //'text' => 'Update was succesfull',
             'members' => $member,
         ];
 
-        $templateName = 'editMember';
+        $templateName = 'admin';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
@@ -115,21 +116,26 @@ class MemberController
 
 
         $paramsPost = $request->request->all();
+        $id = $paramsPost['id'];
         $title = $paramsPost['title'];
         $studentId = $paramsPost['studentId'];
         $supervisorId = $paramsPost['supervisorId'];
         $password = $paramsPost['password'];
         $projectId = $paramsPost['projectId'];
         $status = $paramsPost['status'];
+        $pastPresent = $paramsPost['pastPresent'];
         $name = $paramsPost['name'];
 
+        $id = filter_var($id, FILTER_SANITIZE_STRING);
         $title = filter_var($title, FILTER_SANITIZE_STRING);
         $studentId = filter_var($studentId, FILTER_SANITIZE_STRING);
         $supervisorId = filter_var($supervisorId, FILTER_SANITIZE_STRING);
         $password = filter_var($password, FILTER_SANITIZE_STRING);
         $projectId = filter_var($projectId, FILTER_SANITIZE_STRING);
         $status = filter_var($status, FILTER_SANITIZE_STRING);
+        $pastPresent = filter_var($pastPresent, FILTER_SANITIZE_STRING);
         $name = filter_var($name, FILTER_SANITIZE_STRING);
+
 
 
 
@@ -141,6 +147,7 @@ class MemberController
         // $member->setSupervisorId($supervisorId);
         $member->setProjectId($projectId);
         $member->setStatus($status);
+        $member->setPastPresent($pastPresent);
         $member->setName($name);
 
         $succesfullUpdate = Member::insert($member);
@@ -152,7 +159,7 @@ class MemberController
             'members' => $member,
         ];
 
-        $templateName = 'editMember';
+        $templateName = 'admin';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
@@ -176,16 +183,10 @@ class MemberController
 
         $deleteSuccesfull = Member::delete($id);
 
-        $members = Member::getAll();
-
-        $argsArray = [
-            'text' => 'Delete was successfull',
-            'members' => $members
-        ];
+        return $app->redirect('/admin');
 
 
-        $templateName = 'deleteMember';
-        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+
     }
 
 

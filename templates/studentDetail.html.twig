@@ -16,30 +16,27 @@
 <!-- start table for displaying individual details -->
 <h2>Details of one Student</h2>
 
- <dl>
-    <dt>Id</dt>
-    <dd>{{ students.id }}</dd>
+ <table>
 
-    <dt>Student Number</dt>
-    <dd>{{ students.studentNumber }}</dd>
+     <tr>
+         <th>Id</th>
+         <th>Student Number</th>
+         <th>Supervisor</th>
+         <th>Project</th>
+         <th>Grade</th>
+         <th>Name</th>
+     </tr>
 
-    <dt>Supervisor</dt>
-    <dd>{{ students.supervisor }}</dd>
-
-    <dt>Project</dt>
-    <dd>{{ students.project }}</dd>
-
-    <dt>Status</dt>
-    <dd> {{  students.status}}</dd>
-
-     <dt>Grade</dt>
-     <dd> {{  students.grade}}</dd>
-
-     <dt>Name</dt>
-     <dd> {{  students.name}}</dd>
-
-
- </dl>
+     <tr>
+         <td> {{ students.id }}</td>
+         <td> {{ students.studentNumber }}</td>
+         <td> {{ students.supervisor }}</td>
+         <td> {{ students.project }}</td>
+         <td> {{  students.status}}</td>
+         <td> {{  students.grade}}</td>
+         <td> {{  students.name}}</td>
+     </tr>
+ </table>
 
 
 {% endblock %}

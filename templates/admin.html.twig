@@ -19,11 +19,10 @@
           You are logged in as {{ username }} !!!
         </p>
 
-    <a href="/editMemberTableDisplay">Edit Members</a>
+
+
     <br>
-    <a href="/createMember">Create Members</a>
-    <br>
-    <a href="/deleteMemberTableDisplay">Delete Member</a>
+
     <br>
     <table>
 
@@ -35,6 +34,9 @@
             <th>ProjectID</th>
             <th>Status</th>
             <th>Name</th>
+            <th>Edit</th>
+            <th>Create</th>
+            <th>Delete</th>
         </tr>
 
 
@@ -50,6 +52,9 @@
                 <td>{{ member.projectId }}</td>
                 <td>{{ member.status }}</td>
                 <td><a href="/detail/{{ member.id }}">{{ member.name }}</a></td>
+                <td><a href="/editMemberTableDisplay">Edit Members</a></td>
+                <td> <a href="/createMember">Create Members</a></td>
+                <td><a href="/deleteMemberTableDisplay">Delete Member</a></td>
             </tr>
 
 

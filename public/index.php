@@ -39,6 +39,7 @@ $app->get('/createMember', \Itb\Utility::controller('Itb', 'member/createMember'
 $app->post('/newMember', \Itb\Utility::controller('Itb', 'member/newMember'));
 $app->get('/deleteMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/deleteMemberTableDisplay'));
 $app->get('/deleteMember/{id}', \Itb\Utility::controller('Itb', 'member/deleteMember'));
+$app->get('/matt/{id}', \Itb\Utility::controller('Itb', 'main/matt'));
 
 
   /*switch ($action){

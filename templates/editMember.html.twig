@@ -25,6 +25,8 @@
             <th>SupervisorID</th>
             <th>ProjectID</th>
             <th>Status</th>
+            <th>Past_Present</th>
+            <th>Name</th>
             <th></th>
         </tr>
 
@@ -40,6 +42,8 @@
                 <td>{{ member.supervisorId }}</td>
                 <td>{{ member.projectId }}</td>
                 <td>{{ member.status }}</td>
+                <td>{{ member.pastPresent }}</td>
+                <td>{{ member.name }}</td>
                 <td><a href="/editMember/{{ member.id }}">edit</a></td>
             </tr>
 

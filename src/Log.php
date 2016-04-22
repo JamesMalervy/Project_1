@@ -66,8 +66,8 @@ class Log extends DatabaseTable
         $this->password = $password;
     }
 
-    /**********************************************************/
-  /*  public function setPassword($password)
+    /**********************************************************
+   public function setPassword($password)
     {
         $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
         $this->password = $hashedPassword;
@@ -102,22 +102,22 @@ class Log extends DatabaseTable
         // hashed correct password
         //$hashedStoredPassword = $user->getPassword();
 
-        return $user->getRole();
+        return $user->getPosition();
     }
     /**
      * @return mixed
      */
-  /*  public function getRole()
+  /*  public function getPosition()
     {
-        return $this->role;
+        return $this->position;
     }
 
     /**
      * @param mixed $username
      */
- /*   public function setRole($role)
+  /*  public function setPosition($position)
     {
-        $this->role = $role;
+        $this->position = $position;
     }
 
     /**
@@ -128,7 +128,7 @@ class Log extends DatabaseTable
      *
      * @return mixed|null
      */
- /*   public static function getOneByUsername($username)
+  /*  public static function getOneByUsername($username)
     {
         $db = new DatabaseManager();
         $connection = $db->getDbh();
@@ -146,6 +146,7 @@ class Log extends DatabaseTable
             return null;
         }
     }
+
   */
 }
 

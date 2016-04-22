@@ -15,16 +15,18 @@
 
     <form method="post" action="/editMemberDetails">
 
-       <p>
-           Title:
-           <br>
-           <input type="text" name="title" value="{{ memberRow.title }}">
-       </p>
+
 
         <p>
             Student Id:
             <br>
             <input type="text" name="studentId" value="{{ memberRow.studentId }}">
+        </p>
+
+        <p>
+            Title:
+            <br>
+            <input type="text" name="title" value="{{ memberRow.title }}">
         </p>
 
         <p>
@@ -49,6 +51,12 @@
             Status:
             <br>
             <input type="text" name="status" value="{{ memberRow.status }}">
+        </p>
+
+        <p>
+            Status:
+            <br>
+            <input type="text" name="pastPresent" value="{{ memberRow.pastPresent }}">
         </p>
 
         <p>
