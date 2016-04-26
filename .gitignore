@@ -1,0 +1,5 @@
+vendor
+.idea
+*.phar
+
+src/documentation
