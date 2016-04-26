@@ -8,6 +8,7 @@
 
 namespace Itb;
 
+use Mattsmithdev\PdoCrud\DatabaseManager;
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
 class Log extends DatabaseTable
@@ -58,15 +59,7 @@ class Log extends DatabaseTable
         return $this->password;
     }
 
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**********************************************************
+    /**********************************************************/
    public function setPassword($password)
     {
         $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
@@ -75,7 +68,7 @@ class Log extends DatabaseTable
 
     public static function canFindMatchingUsernameAndPassword($username, $password)
     {
-        $user = Login::getOneByUsername($username);
+        $user = Log::getOneByUsername($username);
         // var_dump($user);
         //die();
         // if no record has this username, return FALSE
@@ -104,21 +97,6 @@ class Log extends DatabaseTable
 
         return $user->getPosition();
     }
-    /**
-     * @return mixed
-     */
-  /*  public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
-     * @param mixed $username
-     */
-  /*  public function setPosition($position)
-    {
-        $this->position = $position;
-    }
 
     /**
      * if record exists with $username, return User object for that record
@@ -128,7 +106,8 @@ class Log extends DatabaseTable
      *
      * @return mixed|null
      */
-  /*  public static function getOneByUsername($username)
+
+    public static function getOneByUsername($username)
     {
         $db = new DatabaseManager();
         $connection = $db->getDbh();
@@ -146,8 +125,6 @@ class Log extends DatabaseTable
             return null;
         }
     }
-
-  */
 }
 
 

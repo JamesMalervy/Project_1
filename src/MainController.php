@@ -2,6 +2,7 @@
 namespace Itb;
 
 use Silex\Application;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -52,18 +53,23 @@ class MainController
         $id = $paramsPost['id'];
         $password = $paramsPost['password'];
 
+
         $sanitId = filter_var($id, FILTER_SANITIZE_STRING);
         $sanitPassword = filter_var($password, FILTER_SANITIZE_STRING);
 
-
         $users = Log::searchByColumn('position', $sanitId);
         $user = $users[0];
+
+        if(!password_verify($password, $user->getPassword()))
+            return $app->redirect("/");
+
+
         // $user = \Itb\Log::getOneById($sanitId);
-        $password = $user->getPassword();
+       // $password = $user->getPassword();
         $position = $user->getPosition();
 
         // authenticate! the administrator
-        if ('admin' ===  $position  && $password === $sanitPassword) {
+        if ('admin' ===  $position) {
             // store username in 'user' in 'session'
           $app['session']->set('user', array('username' => $sanitId));
 
@@ -71,14 +77,14 @@ class MainController
             return $app->redirect('/admin');
         }
         // authenticate! the student
-        if ('student' === $position  && $password === $sanitPassword) {
+        if ('student' === $position) {
             // store username in 'user' in 'session'
             $app['session']->set('user', array('username' => $sanitId));
 
             // success - redirect to the secure admin home page
             return $app->redirect('/student');
         }
-        if ('supervisor' === $position  && $password === $sanitPassword) {
+        if ('supervisor' === $position) {
             // store username in 'user' in 'session'
             $app['session']->set('user', array('username' => $sanitId));
 

@@ -1,0 +1,15 @@
+TAP version 13
+ok 1 - Itb\Test::testToSeeIfTestFileIsSetUpRight
+ok 2 - Itb\memberTest::testGetId
+ok 3 - Itb\memberTest::testGetTitle
+ok 4 - Itb\memberTest::testGetStudentId
+ok 5 - Itb\memberTest::testGetPassword
+ok 6 - Itb\memberTest::testProjectId
+ok 7 - Itb\memberTest::testStatus
+ok 8 - Itb\memberTest::testName
+ok 9 - Itb\projectTest::testGetId
+ok 10 - Itb\projectTest::testGetSuperVisor
+ok 11 - Itb\projectTest::testGetGroup
+ok 12 - Itb\projectTest::testGetStatus
+ok 13 - Itb\projectTest::testTitle
+1..13

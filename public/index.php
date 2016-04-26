@@ -61,8 +61,8 @@ $app->error(function (\Exception $e, $code) use ($app) {
             return \Itb\MainController::error404($app, $message);
 
         default:
-            $message = 'We are sorry, but something went terribly wrong.';
-            return \Itb\MainController::error404($app, $message);
+          //  $message = 'We are sorry, but something went terribly wrong.';
+           // return \Itb\MainController::error404($app, $message);
     }
 });
 
